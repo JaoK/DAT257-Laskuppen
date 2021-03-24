@@ -19,10 +19,11 @@ class App extends React.Component {
   }
 
   handleSubmit(event) {
+    console.log("FETCH");
     event.preventDefault();
-    fetch(`/api/greeting?name=${encodeURIComponent(this.state.name)}`)
+    fetch('/api/users')
       .then(response => response.json())
-      .then(state => this.setState(state));
+      .then(state => console.log(state));
   }
 
   render() {
